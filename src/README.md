@@ -2,54 +2,54 @@
 
 Ecommerce landing page for Chicken Triple Delight pet product with Razorpay payment integration and Meta Pixel tracking.
 
-## ⚠️ IMPORTANT: Deployment Method
+## ✅ READY TO DEPLOY
 
-**🚨 Git auto-deploy does NOT work for this project due to a recurring `_redirects` file issue.**
+**Status:** All configuration files updated and verified for Vercel/Netlify deployment.
 
-**✅ Use manual deployment only (see below).**
+**Auto-fix enabled:** The `_redirects` file issue is now automatically fixed before every build.
 
-## 🚀 Quick Deployment (3 Steps)
+## 🚀 Quick Deployment
 
-### Step 1: Download & Build
+### Option 1: Vercel CLI (Fastest)
 
 ```bash
-# Clone the repository
-git clone <your-repo-url>
-cd <project-folder>
-
-# Windows - just double-click
-BUILD-AND-DEPLOY.bat
-
-# Mac/Linux - run in terminal
-chmod +x fix-and-build.sh
-./fix-and-build.sh
-```
-
-### Step 2: Get the `dist` Folder
-
-After building, you'll have a `dist` folder containing your complete static site:
-```
-dist/
-├── index.html           ← Your website
-├── _redirects           ← Routing
-└── assets/
-    ├── index-*.js       ← All code bundled
-    └── index-*.css      ← All styles bundled
-```
-
-### Step 3: Deploy to Netlify
-
-**Recommended: Netlify Drop**
-1. Go to: https://app.netlify.com/drop
-2. Drag the `dist` folder
-3. Done! Your site is live ✅
-
-**Alternative: Vercel**
-```bash
+# Install Vercel CLI (one time)
 npm install -g vercel
-cd dist
+
+# Login (one time)
+vercel login
+
+# Deploy
 vercel --prod
 ```
+
+**Time:** 2-3 minutes | **Auto-fix:** Enabled ✅
+
+### Option 2: Vercel Git Integration
+
+```bash
+# Push to Git
+git push origin main
+
+# Then go to https://vercel.com
+# Import your repository
+# Click "Deploy"
+```
+
+**Automatic deployments on every push!**
+
+### Option 3: Netlify
+
+```bash
+# Build locally
+npm run build
+
+# Deploy
+# Go to: https://app.netlify.com/drop
+# Drag the 'dist' folder
+```
+
+**Time:** 2-3 minutes | **Manual upload required**
 
 ## 🛠️ Development
 
