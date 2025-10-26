@@ -36,8 +36,14 @@ if (!fs.existsSync(redirectsPath)) {
 const stats = fs.statSync(redirectsPath);
 if (stats.isDirectory()) {
   console.error('❌ Error: public/_redirects is a directory, should be a file');
-  console.error('Please delete the directory and create a plain text file instead');
-  process.exit(1);
+  console.log('🔧 Auto-fixing: Deleting directory and creating file...');
+  
+  // Delete the directory and all its contents
+  fs.rmSync(redirectsPath, { recursive: true, force: true });
+  
+  // Create the proper file
+  fs.writeFileSync(redirectsPath, '/* /index.html 200\n');
+  console.log('✅ Fixed: _redirects is now a proper file');
 }
 
 // Check if _redirects has correct content

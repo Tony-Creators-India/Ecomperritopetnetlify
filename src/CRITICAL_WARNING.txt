@@ -1,0 +1,189 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║                   🚨 CRITICAL WARNING 🚨                      ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+⛔ DO NOT EDIT THE _redirects FILE IN FIGMA MAKE ⛔
+
+═══════════════════════════════════════════════════════════════
+
+PROBLEM:
+────────
+Every time you manually edit public/_redirects in Figma Make,
+it converts the file into a DIRECTORY with .tsx components.
+
+This breaks your Netlify deployment with:
+  "Deploy directory 'dist' does not exist"
+
+═══════════════════════════════════════════════════════════════
+
+WHAT KEEPS HAPPENING:
+─────────────────────
+
+1. You (or Figma Make) edit public/_redirects
+2. Figma Make converts it to a directory:
+   public/_redirects/
+     ├── Code-component-xxxxx.tsx
+     └── Code-component-xxxxx.tsx
+3. Netlify build fails
+4. No dist folder is created
+5. Deployment fails
+
+═══════════════════════════════════════════════════════════════
+
+THE FIX (AGAIN):
+────────────────
+
+I've fixed it AGAIN and made the build script AUTO-FIX this issue.
+
+Now the prebuild script will:
+  ✅ Detect if _redirects is a directory
+  ✅ Automatically delete the directory
+  ✅ Recreate it as a proper file
+  ✅ Continue with the build
+
+═══════════════════════════════════════════════════════════════
+
+DEPLOY NOW - FINAL SOLUTION:
+─────────────────────────────
+
+DO NOT try to deploy via Netlify's Git integration anymore.
+The _redirects file will keep breaking.
+
+INSTEAD, use this LOCAL BUILD approach:
+
+Step 1: On Your Computer
+─────────────────────────
+
+  Windows:
+    BUILD-AND-DEPLOY.bat
+
+  Mac/Linux:
+    chmod +x fix-and-build.sh
+    ./fix-and-build.sh
+
+This will:
+  → Fix the _redirects file automatically
+  → Build your project locally
+  → Create a 'dist' folder
+
+
+Step 2: Upload to Netlify Drop
+───────────────────────────────
+
+  1. Go to: https://app.netlify.com/drop
+  2. Drag the 'dist' folder
+  3. Done - Your site is LIVE!
+
+═══════════════════════════════════════════════════════════════
+
+WHY THIS WORKS:
+───────────────
+
+✅ Build happens on YOUR computer (not Netlify servers)
+✅ _redirects is fixed automatically by the script
+✅ You get a clean 'dist' folder
+✅ Just upload the dist folder (no build process on Netlify)
+✅ No more _redirects issues!
+
+═══════════════════════════════════════════════════════════════
+
+STOP USING:
+───────────
+
+❌ Netlify Git auto-deploy
+❌ Netlify "Trigger deploy" button
+❌ Manual edits to _redirects in Figma Make
+
+═══════════════════════════════════════════════════════════════
+
+START USING:
+────────────
+
+✅ Local build with the script
+✅ Netlify Drop to upload dist folder
+✅ Manual deployment only
+
+═══════════════════════════════════════════════════════════════
+
+CURRENT STATUS:
+───────────────
+
+✅ _redirects has been fixed (AGAIN)
+✅ Build script now AUTO-FIXES this issue
+✅ You can now build locally successfully
+
+═══════════════════════════════════════════════════════════════
+
+NEXT STEPS:
+───────────
+
+1. Download/clone this project to YOUR COMPUTER
+
+2. Run the build script:
+   Windows: BUILD-AND-DEPLOY.bat
+   Mac/Linux: ./fix-and-build.sh
+
+3. Upload dist folder to Netlify Drop:
+   https://app.netlify.com/drop
+
+4. NEVER commit changes to _redirects from Figma Make
+
+═══════════════════════════════════════════════════════════════
+
+ALTERNATIVE: Disconnect Git from Netlify
+─────────────────────────────────────────
+
+If you want to avoid this issue completely:
+
+1. Go to Netlify dashboard
+2. Site settings → Build & deploy
+3. Click "Stop builds" or disconnect repository
+4. Always deploy manually via Netlify Drop
+5. Upload new dist folder when you make changes
+
+═══════════════════════════════════════════════════════════════
+
+SUMMARY:
+────────
+
+The _redirects file in Figma Make is cursed.
+It keeps turning into a directory.
+
+Solution:
+→ Build on your computer (script auto-fixes it)
+→ Upload dist to Netlify Drop
+→ Stop using Git auto-deploy
+
+═══════════════════════════════════════════════════════════════
+
+🚀 DEPLOY COMMAND:
+
+  1. Run: BUILD-AND-DEPLOY.bat (Windows)
+     Or:  ./fix-and-build.sh (Mac/Linux)
+
+  2. Drag 'dist' folder to:
+     https://app.netlify.com/drop
+
+  3. DONE! ✅
+
+═══════════════════════════════════════════════════════════════
+
+DO NOT:
+  ❌ Edit _redirects in Figma Make
+  ❌ Commit _redirects changes to Git
+  ❌ Use Netlify auto-deploy from Git
+
+DO:
+  ✅ Build locally with the script
+  ✅ Upload dist to Netlify Drop
+  ✅ Deploy manually
+
+═══════════════════════════════════════════════════════════════
+
+This is the FINAL solution.
+The script will handle the _redirects issue automatically.
+Just build locally and upload.
+
+═══════════════════════════════════════════════════════════════
