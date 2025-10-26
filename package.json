@@ -35,6 +35,7 @@
           "clsx": "*",
           "cmdk": "^1.1.1",
           "embla-carousel-react": "^8.6.0",
+          "fs": "*",
           "input-otp": "^1.4.2",
           "lucide-react": "^0.487.0",
           "next-themes": "^0.4.6",
@@ -49,6 +50,7 @@
           "sonner": "^2.0.3",
           "tailwind-merge": "*",
           "tailwindcss": "*",
+          "url": "*",
           "vaul": "^1.1.2",
           "vite": "*"
       },
