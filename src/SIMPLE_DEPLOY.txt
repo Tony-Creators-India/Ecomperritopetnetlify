@@ -1,0 +1,68 @@
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                      ┃
+┃       🚀 SIMPLE 3-STEP DEPLOYMENT GUIDE 🚀          ┃
+┃                                                      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+
+STEP 1: RUN THE SCRIPT
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+On your computer:
+
+  Windows → Double-click: BUILD-AND-DEPLOY.bat
+  
+  Mac/Linux → In terminal: ./fix-and-build.sh
+
+
+STEP 2: WAIT FOR BUILD
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+The script will:
+  ✓ Fix the _redirects file
+  ✓ Install dependencies
+  ✓ Build your project
+  ✓ Create 'dist' folder
+
+This takes 2-3 minutes.
+
+
+STEP 3: UPLOAD TO NETLIFY
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Open: https://app.netlify.com/drop
+  
+  2. Drag the 'dist' folder to the page
+  
+  3. Done! Your site is LIVE! ✅
+
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                     THAT'S IT!                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+
+Your ecommerce site will be live at:
+  https://your-site.netlify.app
+
+
+What works:
+  ✅ Product page with image gallery
+  ✅ Quantity controls and pack selection
+  ✅ Razorpay payment integration
+  ✅ Thank you page at /thank-you
+  ✅ Meta Pixel tracking
+  ✅ Mobile responsive
+
+
+Need help?
+  Read: START_HERE.md
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+        Windows: BUILD-AND-DEPLOY.bat
+        Mac/Linux: ./fix-and-build.sh
+        Then: Drag dist to Netlify Drop
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
