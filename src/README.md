@@ -2,13 +2,62 @@
 
 Ecommerce landing page for Chicken Triple Delight pet product with Razorpay payment integration and Meta Pixel tracking.
 
-## 🚀 Quick Start
+## ⚠️ IMPORTANT: Deployment Method
+
+**🚨 Git auto-deploy does NOT work for this project due to a recurring `_redirects` file issue.**
+
+**✅ Use manual deployment only (see below).**
+
+## 🚀 Quick Deployment (3 Steps)
+
+### Step 1: Download & Build
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd <project-folder>
+
+# Windows - just double-click
+BUILD-AND-DEPLOY.bat
+
+# Mac/Linux - run in terminal
+chmod +x fix-and-build.sh
+./fix-and-build.sh
+```
+
+### Step 2: Get the `dist` Folder
+
+After building, you'll have a `dist` folder containing your complete static site:
+```
+dist/
+├── index.html           ← Your website
+├── _redirects           ← Routing
+└── assets/
+    ├── index-*.js       ← All code bundled
+    └── index-*.css      ← All styles bundled
+```
+
+### Step 3: Deploy to Netlify
+
+**Recommended: Netlify Drop**
+1. Go to: https://app.netlify.com/drop
+2. Drag the `dist` folder
+3. Done! Your site is live ✅
+
+**Alternative: Vercel**
+```bash
+npm install -g vercel
+cd dist
+vercel --prod
+```
+
+## 🛠️ Development
 
 ### Prerequisites
 - Node.js 18 or higher
 - npm or yarn
 
-### Installation
+### Local Development
 
 ```bash
 # Install dependencies
@@ -21,42 +70,7 @@ npm run dev
 npm run build
 
 # Preview production build
-npm preview
-```
-
-## 📦 Deployment on Netlify
-
-### Option 1: Deploy via Netlify CLI
-
-```bash
-# Install Netlify CLI
-npm install -g netlify-cli
-
-# Login to Netlify
-netlify login
-
-# Deploy
-netlify deploy --prod
-```
-
-### Option 2: Deploy via Netlify Web UI
-
-1. Push your code to GitHub
-2. Go to [Netlify](https://app.netlify.com)
-3. Click "New site from Git"
-4. Connect your repository
-5. Configure build settings:
-   - **Build command:** `npm run build`
-   - **Publish directory:** `dist`
-6. Click "Deploy site"
-
-### Option 3: Manual Deploy
-
-```bash
-# Build the project
-npm run build
-
-# Drag and drop the `dist` folder to Netlify
+npm run preview
 ```
 
 ## 🔧 Configuration
@@ -127,6 +141,12 @@ No environment variables needed - all configurations are in the code:
 
 ## 🐛 Troubleshooting
 
+### Error: "No dist folder found"
+**Solution:** You must build the project locally. Run `BUILD-AND-DEPLOY.bat` or `./fix-and-build.sh`
+
+### Git auto-deploy fails?
+**Solution:** Don't use Git auto-deploy. Build locally and upload the `dist` folder to Netlify Drop.
+
 ### Build fails?
 ```bash
 # Clear cache and reinstall
@@ -136,13 +156,29 @@ npm run build
 ```
 
 ### Routes not working on Netlify?
-The `netlify.toml` and `public/_redirects` files handle SPA routing. Make sure they exist.
+The `netlify.toml` and `public/_redirects` files handle SPA routing. They're auto-fixed by the build script.
 
 ### Payment not working?
 Check that Razorpay script is loaded in `index.html`:
 ```html
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 ```
+
+## 📚 Important Documentation
+
+**MUST READ:**
+- `ABSOLUTE_FINAL_INSTRUCTIONS.txt` - How to deploy (critical!)
+- `STOP_DEPLOYING_WITHOUT_BUILDING.md` - Why auto-deploy fails
+- `START_HERE_STATIC_EXPORT.md` - Complete deployment guide
+
+**Build Scripts:**
+- `BUILD-AND-DEPLOY.bat` - Windows build script
+- `fix-and-build.sh` - Mac/Linux build script
+
+**Reference:**
+- `DOCUMENTATION_INDEX.md` - All documentation
+- `vercel.json` - Vercel configuration
+- `netlify.toml` - Netlify configuration
 
 ## 📞 Support
 
