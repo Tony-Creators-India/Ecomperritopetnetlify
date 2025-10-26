@@ -1,0 +1,239 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║          ⚠️  YOU MUST BUILD THIS PROJECT FIRST ⚠️            ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+
+YOU ASKED FOR:
+──────────────
+A static site with index.html and assets, ready to upload
+to Netlify without needing npm run build.
+
+
+WHAT YOU HAVE:
+───────────────
+React/TypeScript source code that MUST be built first
+to create the static files.
+
+
+THE ISSUE:
+───────────
+This project contains .tsx files (React components).
+Browsers cannot run .tsx files directly.
+They need to be built/compiled into .html, .js, and .css files.
+
+
+═══════════════════════════════════════════════════════════════
+
+                    THE SOLUTION
+
+═══════════════════════════════════════════════════════════════
+
+
+STEP 1: Download this project to YOUR COMPUTER
+───────────────────────────────────────────────
+
+You cannot build inside Figma Make.
+You must download the project to your local machine.
+
+
+STEP 2: Run the build script on YOUR COMPUTER
+──────────────────────────────────────────────
+
+Windows:
+  → Double-click: BUILD-AND-DEPLOY.bat
+
+Mac/Linux:
+  → Run in terminal: ./fix-and-build.sh
+
+
+STEP 3: Get the 'dist' folder
+──────────────────────────────
+
+After building, you'll have a new folder called 'dist':
+
+  dist/
+  ├── index.html          ← This is what you want!
+  ├── _redirects          ← Ready to use
+  └── assets/
+      ├── index.js        ← All React code (bundled)
+      └── index.css       ← All styles (bundled)
+
+THIS IS YOUR STATIC SITE!
+• No .tsx files
+• No build needed
+• Just plain HTML/CSS/JS
+• Ready to upload to Netlify
+
+
+STEP 4: Upload 'dist' folder to Netlify
+────────────────────────────────────────
+
+Go to: https://app.netlify.com/drop
+Drag: The 'dist' folder
+Done: Your site is live!
+
+
+═══════════════════════════════════════════════════════════════
+
+                    WHY THIS IS NECESSARY
+
+═══════════════════════════════════════════════════════════════
+
+
+CURRENT FILES (Source Code):
+─────────────────────────────
+  App.tsx                  ← React component (browser can't run)
+  main.tsx                 ← TypeScript (browser can't run)
+  30+ .tsx components      ← Need compilation
+  import statements        ← Need bundling
+
+
+AFTER BUILD (Static Files):
+────────────────────────────
+  index.html               ← Browser can run ✅
+  assets/index.js          ← Browser can run ✅
+  assets/index.css         ← Browser can run ✅
+  _redirects               ← Netlify can use ✅
+
+
+BUILD PROCESS:
+──────────────
+  Source Code  →  [npm run build]  →  Static Site
+  (.tsx files)     (Compiles &         (.html, .js, .css)
+                    Bundles)
+
+
+═══════════════════════════════════════════════════════════════
+
+                    CANNOT BE AVOIDED
+
+═══════════════════════════════════════════════════════════════
+
+
+I CANNOT create the static files for you because:
+  ✗ I'm running in Figma Make
+  ✗ I cannot execute build processes
+  ✗ I cannot run npm commands
+  ✗ I cannot bundle React components
+
+
+YOU MUST create the static files by:
+  ✓ Running the build on your computer
+  ✓ Using the script I created for you
+  ✓ Following the 4 steps above
+
+
+═══════════════════════════════════════════════════════════════
+
+                    IT'S REALLY SIMPLE
+
+═══════════════════════════════════════════════════════════════
+
+
+1. Download this project
+
+2. Run this command:
+   
+   Windows: BUILD-AND-DEPLOY.bat
+   Mac/Linux: ./fix-and-build.sh
+
+3. Wait 2 minutes (first time only)
+
+4. Upload the 'dist' folder to Netlify Drop
+
+5. DONE! Your static site is live!
+
+
+═══════════════════════════════════════════════════════════════
+
+                    WHAT YOU'LL GET
+
+═══════════════════════════════════════════════════════════════
+
+
+After building, the 'dist' folder contains EXACTLY what you want:
+
+  ✅ index.html - Ready to host
+  ✅ All CSS in one file with relative paths
+  ✅ All JS in one file with relative paths
+  ✅ All images with relative paths
+  ✅ _redirects file for routing
+  ✅ No build step needed (already built!)
+  ✅ No package.json needed
+  ✅ No node_modules needed
+  ✅ Just upload and it works!
+
+
+This IS a static site.
+It just needs to be BUILT first to CREATE the static files.
+
+
+═══════════════════════════════════════════════════════════════
+
+                    QUICK COMMANDS
+
+═══════════════════════════════════════════════════════════════
+
+
+On your computer:
+
+  # Clone/download project
+  git clone <your-repo>
+  cd <project>
+
+  # Build (creates static files)
+  BUILD-AND-DEPLOY.bat        # Windows
+  ./fix-and-build.sh          # Mac/Linux
+
+  # Upload dist folder to:
+  https://app.netlify.com/drop
+
+
+TIME: 2-3 minutes total
+RESULT: Static site live on Netlify ✅
+
+
+═══════════════════════════════════════════════════════════════
+
+                    SUMMARY
+
+═══════════════════════════════════════════════════════════════
+
+
+WHAT YOU WANT:
+  Static HTML/CSS/JS files ready to upload
+
+
+WHAT YOU HAVE:
+  React/TypeScript source code
+
+
+HOW TO GET IT:
+  Build the project on your computer
+
+
+HOW LONG:
+  2-3 minutes
+
+
+WHAT TO DO:
+  1. Download project
+  2. Run build script
+  3. Upload dist folder
+  4. Done!
+
+
+═══════════════════════════════════════════════════════════════
+
+              I've fixed the _redirects file AGAIN.
+          Now run the build script on YOUR COMPUTER.
+              The dist folder will be your static site.
+
+═══════════════════════════════════════════════════════════════
+
+
+Read: HOW_TO_GET_STATIC_FILES.md for more details
+
+═══════════════════════════════════════════════════════════════
